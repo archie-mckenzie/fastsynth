@@ -78,6 +78,8 @@ async def synthesize(config_filepath):
 
             new_prompts = __extract_list_from_string(new_completion)
 
+            print(new_prompts)
+
             prompts.extend(new_prompts)
 
         prompts = prompts[0: dataset_size]
@@ -114,9 +116,6 @@ async def synthesize(config_filepath):
     print(f"Dataset synthesis completed in {end_time - start_time} seconds.")
 
 
-def main():
+if __name__ == '__main__':
     CONFIG_FILEPATH = 'config/greek_no_notes.json'
     asyncio.run(synthesize(CONFIG_FILEPATH))
-
-if __name__ == '__main__':
-    main()
