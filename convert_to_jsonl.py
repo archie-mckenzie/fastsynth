@@ -10,6 +10,6 @@ def convert_json_to_jsonl(input_filepath, output_filepath):
             file.write(f"{jsonl_line}\n")
 
 if __name__ == '__main__':
-    INPUT_FILEPATH = 'data/greek_no_notes.json'
-    OUTPUT_FILEPATH = 'data/jsonl/greek_no_notes.jsonl'
+    INPUT_FILEPATH = 'data/greek_no_notes_v2.json'
+    OUTPUT_FILEPATH = 'data/jsonl/greek_no_notes_v2.jsonl'
     convert_json_to_jsonl(INPUT_FILEPATH, OUTPUT_FILEPATH)

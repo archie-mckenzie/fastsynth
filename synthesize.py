@@ -51,7 +51,6 @@ async def synthesize(config_filepath):
     batch_size = config["batch_size"]
     input_prompt = config["input_prompt"]
     output_prompt = config["output_prompt"]
-    supplementary_prompts = config["supplementary_prompts"]
     output_filepath = config["output_filepath"]
     use_random_seed = config["use_random_seed"]
     format_prompt = __get_format_prompt_function(config["model"])
@@ -96,16 +95,11 @@ async def synthesize(config_filepath):
 
         for i, completion in enumerate(completions):
             if completion:
-                if len(supplementary_prompts) > 0:
-                    dataset.append({
-                        "prompt": prompts[i] + '\n\n' + random.choice(supplementary_prompts),
-                        "completion": completion
-                    })
-                else: 
-                    dataset.append({
-                        "prompt": prompts[i],
-                        "completion": completion
-                    })
+                dataset.append({
+                    "prompt": prompts[i],
+                    "completion": completion
+                })
+                    
 
     print(dataset)
 

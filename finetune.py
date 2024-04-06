@@ -8,7 +8,7 @@ def finetune(training_data_url, destination):
         version="mistralai/mistral-7b-instruct-v0.2:79052a3adbba8116ebc6697dcba67ad0d58feff23e7aeb2f103fc9aa545f9269",
         input={
             "train_data": training_data_url,
-            "num_train_epochs": 3
+            "num_train_epochs": 1
         },
         destination=destination
     )
@@ -18,7 +18,7 @@ def finetune(training_data_url, destination):
 
 if __name__ == '__main__':
     DESTINATION = 'archie-mckenzie/mistral-greek-no-notes'
-    TRAINING_DATA_URL = 'https://raw.githubusercontent.com/archie-mckenzie/fastsynth/main/data/jsonl/greek_no_notes.jsonl'
+    TRAINING_DATA_URL = 'https://raw.githubusercontent.com/archie-mckenzie/fastsynth/main/data/jsonl/greek_no_notes_v2.jsonl'
     finetune(TRAINING_DATA_URL, DESTINATION)
 
 
