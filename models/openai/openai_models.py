@@ -23,7 +23,7 @@ async def complete(prompt, model, **kwargs):
     return completion.choices[0].message.content
 
 
-async def complete_all(batch_size, prompts, model = 'gpt-4-turbo', **kwargs):
+async def complete_all(batch_size, prompts, model = 'gpt-4-0125-preview', **kwargs):
     
     results = []
 
