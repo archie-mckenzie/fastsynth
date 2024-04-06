@@ -1,7 +1,5 @@
 {
-    "input_prompt": [
-        "Write some content in Greek. Vary the length and subject, some short sentences, some long paragraphs. Think of some original topics, don't be cliche."
-    ],
+    "input_prompt": "Write some content in Greek. Vary the length and subject, some short sentences, some long paragraphs. Think of some original topics, don't be cliche.",
     "output_prompt": "Translate into English. Do not give notes, just write the translation.",
     "dataset_size": 200,
     "batch_size": 10,

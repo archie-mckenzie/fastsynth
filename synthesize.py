@@ -25,7 +25,10 @@ def __extract_list_from_string(s: str):
     if start == -1 or end == 0:
         return []  # Return an empty list if no list is found
     lst_str = s[start:end]
-    return json.loads(lst_str)
+    try:
+        return json.loads(lst_str)
+    except:
+        return []
 
 
 def __get_format_prompt_function(model):
@@ -111,5 +114,5 @@ async def synthesize(config_filepath):
 
 
 if __name__ == '__main__':
-    CONFIG_FILEPATH = 'config/greek_no_notes.json'
+    CONFIG_FILEPATH = 'config/instruct_no_notes.json'
     asyncio.run(synthesize(CONFIG_FILEPATH))

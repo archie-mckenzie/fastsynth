@@ -1,0 +1,13 @@
+{
+    "input_prompt": "Write some instructions for a large language model, e.g. Translate this Greek into English: Οι παραλίες είναι στο νησί. Or any other natural language instruction. All instructions must include the content that they are talking about.",
+    "output_prompt": "Complete the instruction. No notes.",
+    "dataset_size": 200,
+    "batch_size": 10,
+    "use_random_seed": true,
+    "model": "gpt-4-0125-preview",
+    "model_kwargs": {
+        "temperature": 0.5,
+        "max_tokens": 4096
+    },
+    "output_filepath": "data/instruct_no_notes.json"
+}

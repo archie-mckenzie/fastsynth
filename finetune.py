@@ -17,7 +17,7 @@ def finetune(training_data_url, destination):
 
 
 if __name__ == '__main__':
-    DESTINATION = 'archie-mckenzie/mistral-greek-no-notes'
+    DESTINATION = 'archie-mckenzie/instruct-no-notes'
     TRAINING_DATA_URL = 'https://raw.githubusercontent.com/archie-mckenzie/fastsynth/main/data/jsonl/greek_no_notes_v2.jsonl'
     finetune(TRAINING_DATA_URL, DESTINATION)
 
