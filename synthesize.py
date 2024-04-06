@@ -66,11 +66,11 @@ async def synthesize(config_filepath):
         while len(prompts) <= dataset_size - len(dataset):
 
             if use_random_seed: 
-                current_prompt = f'{__generate_random_seed()}{input_prompt}\n\nGive {batch_size} diverse examples. Write each example as a string, writing the full list as a list of strings [""].' 
+                new_input_prompt = f'{__generate_random_seed()}{input_prompt}\n\nGive {batch_size} diverse examples. Write each example as a string, writing the full list as a list of strings [""].' 
             else: 
-                current_prompt = f'{input_prompt}\n\nGive {batch_size} diverse examples. Write each example as a string, writing the full list as a list of strings [""].'
+                new_input_prompt = f'{input_prompt}\n\nGive {batch_size} diverse examples. Write each example as a string, writing the full list as a list of strings [""].'
             
-            formatted_prompt = format_prompt(current_prompt)
+            formatted_prompt = format_prompt(new_input_prompt)
 
             new_completion = await complete(
                 formatted_prompt, model, **kwargs
