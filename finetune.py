@@ -4,25 +4,6 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-def upload(filepath):
-    print(os.getenv("REPLICATE_API_TOKEN"))
-    headers = {"Authorization": f"Bearer {os.getenv("REPLICATE_API_TOKEN")}"}
-    response = requests.post("https://dreambooth-api-experimental.replicate.com/v1/upload/data.jsonl", headers=headers).json()
-    
-    if 'upload_url' not in response:
-        raise KeyError("The response does not contain 'upload_url'. Response: " + str(response))
-    
-    upload_url = response['upload_url']
-    
-    with open(filepath, 'rb') as f:
-        requests.put(upload_url, data=f)
-    
-    if 'serving_url' not in response:
-        raise KeyError("The response does not contain 'serving_url'. Response: " + str(response))
-    
-    serving_url = response['serving_url']
-    return serving_url
-
 def finetune(training_data_url, destination):
 
     training = replicate.trainings.create(
@@ -38,9 +19,8 @@ def finetune(training_data_url, destination):
 
 
 if __name__ == '__main__':
-    FILEPATH = "data/jsonl/greek_no_notes.jsonl"
     DESTINATION = 'archie-mckenzie/mistral-greek-no-notes'
-    training_data_url = upload(FILEPATH)
-    finetune(training_data_url, DESTINATION)
+    TRAINING_DATA_URL = ''
+    finetune(TRAINING_DATA_URL, DESTINATION)
 
 
