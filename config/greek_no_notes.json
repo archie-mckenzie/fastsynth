@@ -1,0 +1,14 @@
+{
+    "input_prompt": "Write some content in Greek. Vary the length and subject, some short sentences, some long paragraphs.",
+    "output_prompt": "Translate into English. Do not give notes, just write the translation.",
+    "supplementary_prompts": ["Translate:", "Translate to English", "Translate", "translate", "Translate from Greek into English"],
+    "dataset_size": 200,
+    "batch_size": 20,
+    "use_random_seed": true,
+    "model": "gpt-4-0125-preview",
+    "model_kwargs": {
+        "temperature": 0.4,
+        "max_tokens": 4096
+    },
+    "output_filepath": "data/greek_no_notes.json"
+}
